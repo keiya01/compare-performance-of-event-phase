@@ -13,7 +13,7 @@
 - 各5回の結果の集計を各アイテム数で行った(10000 items, 30000 items, 50000 items, 100000 items)
 
 # code
-### without bubble phase**
+### without bubble phase
 ```js
   const list = document.getElementById("list");
 
