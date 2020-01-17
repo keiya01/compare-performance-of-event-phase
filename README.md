@@ -50,7 +50,7 @@
 
 # Result
 
-| item length | bubble phase (rendering / scripting) | without (rendering / scripting) |
+| item length | bubble phase | without bubble phase |
 | :---: | :---: | :---: |
 | 10000 items | 50ms | 90ms |
 | 30000 items | 138ms | 272ms |
