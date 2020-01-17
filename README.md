@@ -8,7 +8,7 @@
 
 # How to measure performance
 - 計測の方法は`Chrome`の`DevTools`を使用した
-- `Chrome`の`DevTools`の`performanceタブ`で計測し、`scripting`の時間、`rendering`の時間を集計して、平均で比較する
+- `Chrome`の`DevTools`の`performanceタブ`で計測し、`scripting`の時間を集計して、平均で比較する
 - 計測の範囲はリロードをして、ローディングが始まってからrenderingが終わるまでの間である
 - 各5回の結果の集計を各アイテム数で行った(10000 items, 30000 items, 50000 items, 100000 items)
 
@@ -52,7 +52,11 @@
 
 | item length | bubble phase (rendering / scripting) | without (rendering / scripting) |
 | :---: | :---: | :---: |
-| 10000 items | 643.4ms / 50ms | 663.2ms / 90ms |
-| 30000 items | 1891.8ms / 138.2ms | 1829.2ms / 272.4ms |
-| 50000 items | 2797ms / 173.8ms | 2625.4ms / 479.4ms |
-| 100000 items | 5734.7ms / 464ms | 3520ms / 592ms |
+| 10000 items | 50ms | 90ms |
+| 30000 items | 138ms | 272ms |
+| 50000 items | 174ms | 479ms |
+| 100000 items | 402ms | 592ms |
+
+- `scripting`の結果を見ると、`bubble phase`を利用した処理の方が速かった
+- これは関数の生成回数や、代入の回数、メモリの利用量などが減ったことによるものだと考えられる
+- `addEventListener`はメモリにも影響してくるので、メモリ利用量なども計測してみたい
